@@ -6,7 +6,8 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
         {
@@ -28,7 +29,8 @@ module.exports = {
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        "i18next"
     ],
     "rules": {
         "indent": [
@@ -54,5 +56,6 @@ module.exports = {
         "no-unused-vars": "warn",
         "react/require-default-props": "off",
         "no-shadows": "off",
+        "i18next/no-literal-string": ["warn", {markupOnly: true}]
     }
 };
