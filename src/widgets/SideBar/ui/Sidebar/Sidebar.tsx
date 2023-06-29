@@ -1,23 +1,24 @@
 import {classNames} from "shared/lib/helpers/classNames/classNames";
-import cls from "./Sidebar.module.scss"
+import cls from "./Sidebar.module.scss";
 import {useState} from "react";
 import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import {LangSwitcher} from "widgets/LangSwitcher/LangSwitcher";
-import BurgerIcon from "shared/assets/icons/burger.svg"
+import BurgerIcon from "shared/assets/icons/burger.svg";
 import {Button} from "shared/ui/Button/Button";
 import {Theme, useTheme} from "app/providers/ThemeProvider";
 
 interface SidebarProps {
     className?: string
 }
-export const Sidebar = (props : SidebarProps) => {
+
+export const Sidebar = (props: SidebarProps) => {
     const {
         className
-    } = props
-    const {theme} = useTheme()
+    } = props;
+    const {theme} = useTheme();
     const onToggle = () => {
-        setIsClose(prev => !prev)
-    }
+        setIsClose(prev => !prev);
+    };
 
 
     const [isClose, setIsClose] = useState(false);
@@ -30,7 +31,6 @@ export const Sidebar = (props : SidebarProps) => {
                 <ThemeSwitcher/>
                 <LangSwitcher/>
             </div>
-
         </div>
     );
 };

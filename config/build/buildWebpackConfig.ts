@@ -6,12 +6,12 @@ import {buildPlugins} from "./buildPlugins";
 import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(option: BuildOptions): webpack.Configuration {
-    const {paths, mode, isDev} = option
+    const {paths, mode, isDev} = option;
     return {
         mode,
         entry: paths.entry,
         output: {
-            filename: 'js/[name].[contenthash].js',
+            filename: "js/[name].[contenthash].js",
             path: paths.build,
             clean: true
         },
@@ -27,5 +27,5 @@ export function buildWebpackConfig(option: BuildOptions): webpack.Configuration 
             maxEntrypointSize: 512000,
             maxAssetSize: 512000
         }
-    }
+    };
 }
