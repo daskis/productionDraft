@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const MainPage = () => {
+    const {t} = useTranslation("main")
     return (
-        <>
-            <Link to={"/"}>Main</Link>
-            <Link to={"/about"}>About</Link>
-            Main
-        </>
+        <div>
+            {t("Главная")}
+        </div>
     );
 };
 
