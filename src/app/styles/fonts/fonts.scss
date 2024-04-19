@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url("@shared/assets/fonts/Montserrat/Montserrat-Bold.ttf") format("ttf"),
+  url("@shared/assets/fonts/Montserrat/Montserrat-Bold.woff") format("woff"),
+  url("@shared/assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("@shared/assets/fonts/Montserrat/Montserrat-Medium.ttf") format("ttf"),
+  url("@shared/assets/fonts/Montserrat/Montserrat-Medium.ttf") format("woff"),
+  url("@shared/assets/fonts/Montserrat/Montserrat-Medium.ttf") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("@shared/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("ttf"),
+  url("@shared/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("woff"),
+  url("@shared/assets/fonts/Montserrat/Montserrat-Regular.ttf") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'NikoMoji';
+  src: url("@shared/assets/fonts/NikoMoji/NicoMoji-Regular.ttf") format("ttf"),
+  url("@shared/assets/fonts/NikoMoji/NicoMoji-Regular.woff") format("woff"),
+  url("@shared/assets/fonts/NikoMoji/NicoMoji-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
