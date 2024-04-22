@@ -33,3 +33,4 @@ export enum FontFamilyEnum {
     SECOND = 'second',
     THIRD = 'third',
 }
+
