@@ -1,8 +1,9 @@
-import cls from './Button.module.scss';
-import { ButtonTypeEnum, IButtonProps, Text } from '@shared/ui';
+import cls from './Tag.module.scss';
+import { ITagProps, TagTypeEnum } from '@shared/ui/Tag';
+import { Text } from '@shared/ui';
 import { BorderEnum, classNames, ColorEnum, FontFamilyEnum, SizeEnum, WeightEnum } from '@shared/lib';
 
-export const Button = (
+export const Tag = (
     {
         color = ColorEnum.BLACK,
         size = SizeEnum.H1,
@@ -10,28 +11,16 @@ export const Button = (
         weight = WeightEnum.NORMAL,
         border = BorderEnum.H3,
         bgColor = ColorEnum.PRIMARY,
-        buttonType = ButtonTypeEnum.FILLED,
-        className,
         children,
+        className,
+        tagType,
         ...props
-    }: IButtonProps,
-) => {
+    }: ITagProps) => {
     return (
-        <button
+        <Text.Paragraph
             {...props}
-            className={classNames(cls.button, {
+            className={classNames(cls.tag, {
                 // ЦВЕТА
-                [cls.primary]: color === ColorEnum.PRIMARY,
-                [cls.secondary]: color === ColorEnum.SECONDARY,
-                [cls.success]: color === ColorEnum.SUCCESS,
-                [cls.warning]: color === ColorEnum.WARNING,
-                [cls.danger]: color === ColorEnum.DANGER,
-                [cls.info]: color === ColorEnum.INFO,
-                [cls.link]: color === ColorEnum.LINK,
-                [cls.white]: color === ColorEnum.WHITE,
-                [cls.black]: color === ColorEnum.BLACK,
-
-
                 [cls.primaryBg]: bgColor === ColorEnum.PRIMARY,
                 [cls.secondaryBg]: bgColor === ColorEnum.SECONDARY,
                 [cls.successBg]: bgColor === ColorEnum.SUCCESS,
@@ -41,8 +30,6 @@ export const Button = (
                 [cls.linkBg]: bgColor === ColorEnum.LINK,
                 [cls.whiteBg]: bgColor === ColorEnum.WHITE,
                 [cls.blackBg]: bgColor === ColorEnum.BLACK,
-
-
                 // РАЗМЕР
                 [cls.h1]: size === SizeEnum.H1,
                 [cls.h2]: size === SizeEnum.H2,
@@ -60,21 +47,18 @@ export const Button = (
                 [cls.borderH6]: border === BorderEnum.H6,
 
 
-                [cls.default]: buttonType === ButtonTypeEnum.DEFAULT,
-                [cls.dashed]: buttonType === ButtonTypeEnum.DASHED,
-                [cls.filled]: buttonType === ButtonTypeEnum.FILLED,
+                [cls.default]: tagType === TagTypeEnum.DEFAULT,
+                [cls.dashed]: tagType === TagTypeEnum.DASHED,
+                [cls.filled]: tagType === TagTypeEnum.FILLED,
 
             }, [className])}
+            color={color}
+            size={size}
+            fontFamily={fontFamily}
+            weight={weight}
         >
-            <Text.Paragraph
-                color={color}
-                size={size}
-                weight={weight}
-                fontFamily={fontFamily}
-            >
-                {children}
-            </Text.Paragraph>
-        </button>
+            {children}
+        </Text.Paragraph>
     );
 };
 
