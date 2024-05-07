@@ -1,19 +1,14 @@
 .button {
   transition: .3s all ease;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  //&.primary {
-  //  color: var(--primary);
-  //
-  //  &:hover {
-  //    color: var(--primary-hover);
-  //  }
-  //
-  //  &:active {
-  //    color: var(--primary-active);
-  //  }
-  //}
-
+  &:disabled {
+    cursor: not-allowed;
+    filter: brightness(90%);
+  }
 
   &.primaryBg {
     background-color: var(--primary);
@@ -24,11 +19,11 @@
 
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--primary-hover);
     }
 
-    &:active {
+    &:not(:disabled):active {
       background-color: var(--primary-active);
     }
   }
@@ -54,11 +49,11 @@
 
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--secondary-hover);
     }
 
-    &:active {
+    &:not(:disabled):active {
       background-color: var(--secondary-active);
     }
   }
@@ -84,11 +79,11 @@
 
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--success-hover);
     }
 
-    &:active {
+    &:not(:disabled):active {
       background-color: var(--success-active);
     }
   }
@@ -114,11 +109,11 @@
 
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--warning-hover);
     }
 
-    &:active {
+    &:not(:disabled):active {
       background-color: var(--warning-active);
     }
   }
@@ -144,11 +139,11 @@
 
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--danger-hover);
     }
 
-    &:active {
+    &:not(:disabled):active {
       background-color: var(--danger-active);
     }
   }
@@ -174,11 +169,11 @@
 
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--info-hover);
     }
 
-    &:active {
+    &:not(:disabled):active {
       background-color: var(--info-active);
     }
   }
@@ -204,17 +199,21 @@
 
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       background-color: var(--link-hover);
     }
 
-    &:active {
+    &:not(:disabled):active {
       background-color: var(--link-active);
     }
   }
 
   &.white {
     color: var(--white);
+
+    & svg {
+      fill: var(--white);
+    }
   }
 
   &.whiteBg {
@@ -224,6 +223,10 @@
 
   &.black {
     color: var(--black);
+
+    & svg {
+      fill: var(--black);
+    }
   }
 
   &.blackBg {
@@ -234,26 +237,56 @@
 
   &.h1 {
     padding: var(--padding-3) var(--padding-1);
+
+    & svg {
+      width: var(--paragraph-size-1);
+      height: var(--paragraph-size-1);
+    }
   }
 
   &.h2 {
     padding: var(--padding-4) var(--padding-1);
+
+    & svg {
+      width: var(--paragraph-size-2);
+      height: var(--paragraph-size-2);
+    }
   }
 
   &.h3 {
     padding: var(--padding-5) var(--padding-2);
+
+    & svg {
+      width: var(--paragraph-size-3);
+      height: var(--paragraph-size-3);
+    }
   }
 
   &.h4 {
     padding: var(--padding-5) var(--padding-2);
+
+    & svg {
+      width: var(--paragraph-size-4);
+      height: var(--paragraph-size-4);
+    }
   }
 
   &.h5 {
     padding: var(--padding-6) var(--padding-3);
+
+    & svg {
+      width: var(--paragraph-size-5);
+      height: var(--paragraph-size-5);
+    }
   }
 
   &.h6 {
     padding: var(--padding-6) var(--padding-3);
+
+    & svg {
+      width: var(--paragraph-size-6);
+      height: var(--paragraph-size-6);
+    }
   }
 
 

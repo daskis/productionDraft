@@ -1,34 +1,38 @@
 import cls from './Input.module.scss';
 import { IInputProps } from '@shared/ui/Input';
 import { ChangeEvent, useEffect, useState } from 'react';
-import { BorderEnum, classNames, ColorEnum, SizeEnum } from '@shared/lib';
+import { BorderEnum, classNames, ColorEnum, SizeEnum, useDebounce } from '@shared/lib';
 import { Paragraph } from '@shared/ui';
 
-export const Input = (
-    {
-        color = ColorEnum.BLACK,
-        border = BorderEnum.H1,
-        bgColor = ColorEnum.WHITE,
-        value,
-        size = SizeEnum.H1,
-        label,
-        borderColor = ColorEnum.PRIMARY,
-        type,
-        className,
-        onChange,
-        ...props
-    }: IInputProps) => {
+export const Input = ({
+                          color = ColorEnum.BLACK,
+                          border = BorderEnum.H1,
+                          bgColor = ColorEnum.WHITE,
+                          value,
+                          size = SizeEnum.H1,
+                          label,
+                          borderColor = ColorEnum.PRIMARY,
+                          type,
+                          className,
+                          onChange,
+                          ...props
+                      }: IInputProps) => {
+    const [inputValue, setInputValue] = useState<string>(value || '');
+    const debouncedValue = useDebounce({ value: inputValue, delay: 300 });
 
-    const [inputValue, setInputValue] = useState<string>();
+    useEffect(() => {
+        if (debouncedValue !== value) {
+            onChange({ target: { value: debouncedValue } } as ChangeEvent<HTMLInputElement>);
+        }
+    }, [debouncedValue, onChange, value]);
+
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value);
-        onChange(event);
     };
 
     useEffect(() => {
         setInputValue(value || '');
     }, [value]);
-
 
     return (
         <div className={cls.wrapper}>
@@ -42,8 +46,8 @@ export const Input = (
                     [cls.blackBg]: bgColor === ColorEnum.BLACK,
                     [cls.primary]: borderColor === ColorEnum.PRIMARY,
                     [cls.secondary]: borderColor === ColorEnum.SECONDARY,
-                    [cls.white] : color === ColorEnum.WHITE,
-                    [cls.black] : color === ColorEnum.BLACK,
+                    [cls.white]: color === ColorEnum.WHITE,
+                    [cls.black]: color === ColorEnum.BLACK,
                     // РАЗМЕР
                     [cls.h1]: size === SizeEnum.H1,
                     [cls.h2]: size === SizeEnum.H2,
@@ -63,12 +67,12 @@ export const Input = (
                 {...props}
             />
             <Paragraph
-
                 className={cls.label}
-                size={size} color={color}>
+                size={size}
+                color={color}
+            >
                 {label}
             </Paragraph>
         </div>
     );
 };
-

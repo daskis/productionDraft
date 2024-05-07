@@ -10,6 +10,7 @@ export enum ButtonTypeEnum {
 
 
 export interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    isLoading?: boolean;
     color?: ColorEnum;
     bgColor?: ColorEnum;
     size?: SizeEnum;

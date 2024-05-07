@@ -1,6 +1,7 @@
 import cls from './Button.module.scss';
 import { ButtonTypeEnum, IButtonProps, Text } from '@shared/ui';
 import { BorderEnum, classNames, ColorEnum, FontFamilyEnum, SizeEnum, WeightEnum } from '@shared/lib';
+import Loading from '@assets/icons/loadingSpinner.svg';
 
 export const Button = (
     {
@@ -12,12 +13,14 @@ export const Button = (
         bgColor = ColorEnum.PRIMARY,
         buttonType = ButtonTypeEnum.FILLED,
         className,
+        isLoading,
         children,
         ...props
     }: IButtonProps,
 ) => {
     return (
         <button
+            disabled={isLoading}
             {...props}
             className={classNames(cls.button, {
                 // ЦВЕТА
@@ -66,14 +69,19 @@ export const Button = (
 
             }, [className])}
         >
-            <Text.Paragraph
-                color={color}
-                size={size}
-                weight={weight}
-                fontFamily={fontFamily}
-            >
-                {children}
-            </Text.Paragraph>
+            {isLoading
+                ?
+                <Loading />
+                :
+                <Text.Paragraph
+                    color={color}
+                    size={size}
+                    weight={weight}
+                    fontFamily={fontFamily}
+                >
+                    {children}
+                </Text.Paragraph>
+            }
         </button>
     );
 };
