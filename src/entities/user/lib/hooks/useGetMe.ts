@@ -1,7 +1,6 @@
-import { useGetMeQuery } from '@entities/user';
+import { setUser, useGetMeQuery } from '@entities/user';
 import { useEffect } from 'react';
 import { useAppDispatch } from '@shared/lib';
-import { setUser } from '@features/auth';
 
 export const useGetMe = () => {
     const { data } = useGetMeQuery(null);

@@ -35,6 +35,10 @@
     color: var(--black);
   }
 
+  &.text {
+    color: var(--text);
+  }
+
   &.h1 {
     font: var(--heading-1);
   }
@@ -84,14 +88,14 @@
   }
 
   &.fontFirst {
-    font-family: var(--fontFamilyFirst);
+    font-family: var(--fontFamilyFirst), sans-serif;
   }
 
   &.fontSecond {
-    font-family: var(--fontFamilySecond);
+    font-family: var(--fontFamilySecond) sans-serif;
   }
 
   &.fontThird {
-    font-family: var(--fontFamilyThird);
+    font-family: var(--fontFamilyThird) sans-serif;
   }
 }

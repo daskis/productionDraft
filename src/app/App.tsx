@@ -1,15 +1,16 @@
 import { ReactNode } from 'react';
-import { classNames, useTheme } from '@shared/lib';
+import { classNames } from '@shared/lib';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useGetMe } from '@entities/user';
+import { useTheme } from '@app/providers';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const App = ({ children }: { children: ReactNode }) => {
     const { theme } = useTheme();
     useGetMe();
-    return <div className={classNames('app', {}, [theme])}>
-        <>
+    return (
+        <div className={classNames('app', {}, [theme])}>
             <ToastContainer
                 style={{ zIndex: 10000000 }}
                 position="top-center"
@@ -24,6 +25,6 @@ export const App = ({ children }: { children: ReactNode }) => {
                 theme={theme}
             />
             {children}
-        </>
-    </div>;
+        </div>
+    );
 };

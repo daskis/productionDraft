@@ -10,21 +10,19 @@
     filter: brightness(90%);
   }
 
+  &:not(:disabled):hover {
+    filter: brightness(80%);
+  }
+
+  &:not(:disabled):active {
+    filter: brightness(70%);
+  }
+
   &.primaryBg {
-    background-color: var(--primary);
     border: 1px solid var(--primary);
 
     &.filled {
       background-color: var(--primary);
-
-    }
-
-    &:not(:disabled):hover {
-      background-color: var(--primary-hover);
-    }
-
-    &:not(:disabled):active {
-      background-color: var(--primary-active);
     }
   }
 
@@ -41,20 +39,10 @@
   //}
 
   &.secondaryBg {
-    background-color: var(--secondary);
     border: 1px solid var(--secondary);
 
     &.filled {
       background-color: var(--secondary);
-
-    }
-
-    &:not(:disabled):hover {
-      background-color: var(--secondary-hover);
-    }
-
-    &:not(:disabled):active {
-      background-color: var(--secondary-active);
     }
   }
 
@@ -71,21 +59,12 @@
   //}
 
   &.successBg {
-    background-color: var(--success);
     border: 1px solid var(--success);
 
     &.filled {
       background-color: var(--success);
-
     }
 
-    &:not(:disabled):hover {
-      background-color: var(--success-hover);
-    }
-
-    &:not(:disabled):active {
-      background-color: var(--success-active);
-    }
   }
 
   //&.warning {
@@ -101,51 +80,21 @@
   //}
 
   &.warningBg {
-    background-color: var(--warning);
     border: 1px solid var(--warning);
 
     &.filled {
       background-color: var(--warning);
-
     }
 
-    &:not(:disabled):hover {
-      background-color: var(--warning-hover);
-    }
-
-    &:not(:disabled):active {
-      background-color: var(--warning-active);
-    }
   }
 
-  //&.danger {
-  //  color: var(--danger);
-  //
-  //  &:hover {
-  //    color: var(--danger-hover);
-  //  }
-  //
-  //  &:active {
-  //    color: var(--danger-active);
-  //  }
-  //}
-
   &.dangerBg {
-    background-color: var(--danger);
     border: 1px solid var(--danger);
 
     &.filled {
       background-color: var(--danger);
-
     }
 
-    &:not(:disabled):hover {
-      background-color: var(--danger-hover);
-    }
-
-    &:not(:disabled):active {
-      background-color: var(--danger-active);
-    }
   }
 
   //&.info {
@@ -161,20 +110,11 @@
   //}
 
   &.infoBg {
-    background-color: var(--info);
     border: 1px solid var(--info);
 
     &.filled {
       background-color: var(--info);
 
-    }
-
-    &:not(:disabled):hover {
-      background-color: var(--info-hover);
-    }
-
-    &:not(:disabled):active {
-      background-color: var(--info-active);
     }
   }
 
@@ -191,20 +131,10 @@
   //}
 
   &.linkBg {
-    background-color: var(--link);
     border: 1px solid var(--link);
 
     &.filled {
       background-color: var(--link);
-
-    }
-
-    &:not(:disabled):hover {
-      background-color: var(--link-hover);
-    }
-
-    &:not(:disabled):active {
-      background-color: var(--link-active);
     }
   }
 
@@ -341,4 +271,5 @@
 
     }
   }
+
 }

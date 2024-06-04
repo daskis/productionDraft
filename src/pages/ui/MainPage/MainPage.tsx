@@ -1,4 +1,4 @@
-import { Button, ButtonTypeEnum, Text } from '@shared/ui';
+import { Button, ButtonTypeEnum, Text, ThemeSwitcher } from '@shared/ui';
 import { BorderEnum, ColorEnum, SizeEnum, WeightEnum } from '@shared/lib';
 import { Tag, TagTypeEnum } from '@shared/ui/Tag';
 import { Input } from '@shared/ui/Input';
@@ -34,7 +34,10 @@ export const MainPage = () => {
             <Text.Link to={'124'} size={SizeEnum.H6}>124</Text.Link>
 
 
-            <Button size={SizeEnum.H1} color={ColorEnum.WHITE}>1e4dasdasdsa</Button>
+            <Button size={SizeEnum.H1}>1e4dasdasdsa</Button>
+            <Button size={SizeEnum.H1} bgColor={ColorEnum.DANGER} color={ColorEnum.WHITE}>1e4dasdasdsa</Button>
+            <Button size={SizeEnum.H1}>1e4dasdasdsa</Button>
+            <Button size={SizeEnum.H1}>1e4dasdasdsa</Button>
             <Button size={SizeEnum.H2} buttonType={ButtonTypeEnum.DASHED}>1e4dasdasdsa</Button>
             <Button size={SizeEnum.H3} buttonType={ButtonTypeEnum.DEFAULT}>1e4dasdasdsa</Button>
             <Button size={SizeEnum.H4} buttonType={ButtonTypeEnum.DEFAULT}>1e4dasdasdsa</Button>
@@ -52,7 +55,8 @@ export const MainPage = () => {
                    onChange={(value) => {
                        setValue(value.target.value);
                    }} />
-            <Input label={'124'} size={SizeEnum.H2} border={BorderEnum.H6} bgColor={ColorEnum.BLACK} color={ColorEnum.WHITE} value={value}
+            <Input label={'124'} size={SizeEnum.H2} border={BorderEnum.H6} bgColor={ColorEnum.TEXT}
+                   value={value}
                    onChange={(value) => {
                        setValue(value.target.value);
                    }} />
@@ -72,6 +76,8 @@ export const MainPage = () => {
                    onChange={(value) => {
                        setValue(value.target.value);
                    }} />
+
+            <ThemeSwitcher />
         </div>
     );
 };

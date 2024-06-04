@@ -25,6 +25,19 @@
     }
   }
 
+
+  &.text {
+    color: var(--text);
+
+    &:hover {
+      filter: brightness(90%);
+    }
+
+    &:active {
+      filter: brightness(90%);
+    }
+  }
+
   &.success {
     color: var(--success);
 
@@ -142,14 +155,14 @@
   }
 
   &.fontFirst {
-    font-family: var(--fontFamilyFirst);
+    font-family: var(--fontFamilyFirst), sans-serif;
   }
 
   &.fontSecond {
-    font-family: var(--fontFamilySecond);
+    font-family: var(--fontFamilySecond) sans-serif;
   }
 
   &.fontThird {
-    font-family: var(--fontFamilyThird);
+    font-family: var(--fontFamilyThird) sans-serif;
   }
 }

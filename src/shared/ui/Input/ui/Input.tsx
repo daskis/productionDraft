@@ -4,19 +4,20 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { BorderEnum, classNames, ColorEnum, SizeEnum, useDebounce } from '@shared/lib';
 import { Paragraph } from '@shared/ui';
 
-export const Input = ({
-                          color = ColorEnum.BLACK,
-                          border = BorderEnum.H1,
-                          bgColor = ColorEnum.WHITE,
-                          value,
-                          size = SizeEnum.H1,
-                          label,
-                          borderColor = ColorEnum.PRIMARY,
-                          type,
-                          className,
-                          onChange,
-                          ...props
-                      }: IInputProps) => {
+export const Input = (
+    {
+        color = ColorEnum.TEXT,
+        border = BorderEnum.H1,
+        bgColor = ColorEnum.WHITE,
+        value,
+        size = SizeEnum.H1,
+        label,
+        borderColor = ColorEnum.PRIMARY,
+        type,
+        className,
+        onChange,
+        ...props
+    }: IInputProps) => {
     const [inputValue, setInputValue] = useState<string>(value || '');
     const debouncedValue = useDebounce({ value: inputValue, delay: 300 });
 
@@ -41,13 +42,17 @@ export const Input = ({
                 value={inputValue}
                 onChange={handleChange}
                 className={classNames(cls.input, {
-                    // ЦВЕТА
+                    // BG
                     [cls.whiteBg]: bgColor === ColorEnum.WHITE,
                     [cls.blackBg]: bgColor === ColorEnum.BLACK,
+                    [cls.textBg]: bgColor === ColorEnum.TEXT,
+
+                    // ЦВЕТА
                     [cls.primary]: borderColor === ColorEnum.PRIMARY,
                     [cls.secondary]: borderColor === ColorEnum.SECONDARY,
                     [cls.white]: color === ColorEnum.WHITE,
                     [cls.black]: color === ColorEnum.BLACK,
+                    [cls.text]: color === ColorEnum.TEXT,
                     // РАЗМЕР
                     [cls.h1]: size === SizeEnum.H1,
                     [cls.h2]: size === SizeEnum.H2,

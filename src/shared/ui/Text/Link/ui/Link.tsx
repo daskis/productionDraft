@@ -4,14 +4,15 @@ import { classNames, ColorEnum, SizeEnum, WeightEnum } from '@shared/lib';
 import { ILinkProps } from '@shared/ui';
 
 
-export const Link = ({
-                         color = ColorEnum.LINK,
-                         size = SizeEnum.H1,
-                         weight = WeightEnum.NORMAL,
-                         className,
-                         children,
-                         ...props
-                     }: ILinkProps) => {
+export const Link = (
+    {
+        color = ColorEnum.LINK,
+        size = SizeEnum.H1,
+        weight = WeightEnum.NORMAL,
+        className,
+        children,
+        ...props
+    }: ILinkProps) => {
     return (
         <RouterLink
             {...props}
@@ -26,7 +27,7 @@ export const Link = ({
                 [cls.link]: color === ColorEnum.LINK,
                 [cls.white]: color === ColorEnum.WHITE,
                 [cls.black]: color === ColorEnum.BLACK,
-
+                [cls.text]: color === ColorEnum.TEXT,
                 // РАЗМЕРЫ
                 [cls.h1]: size === SizeEnum.H1,
                 [cls.h2]: size === SizeEnum.H2,

@@ -1,1 +1,1 @@
-export * from "./authSlice.ts"
+export * from './authSlice.ts';

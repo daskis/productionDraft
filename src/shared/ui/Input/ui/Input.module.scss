@@ -52,7 +52,6 @@
 
     &:focus + .label,
     &:not([value=""]) + .label {
-      background-color: var(--white);
       transform: scale(75%);
       padding: 0 10px;
       top: -0.75rem;
@@ -72,7 +71,6 @@
 
     &:focus + .label,
     &:not([value=""]) + .label {
-      background-color: var(--white);
       transform: scale(75%);
       padding: 0 10px;
       top: -0.75rem;
@@ -92,7 +90,6 @@
 
     &:focus + .label,
     &:not([value=""]) + .label {
-      background-color: var(--white);
       transform: scale(75%);
       padding: 0 10px;
       top: -0.6rem;
@@ -112,7 +109,6 @@
 
     &:focus + .label,
     &:not([value=""]) + .label {
-      background-color: var(--white);
       transform: scale(75%);
       padding: 0 10px;
       top: -0.5rem;
@@ -132,7 +128,6 @@
 
     &:focus + .label,
     &:not([value=""]) + .label {
-      background-color: var(--white);
       transform: scale(75%);
       padding: 0 10px;
       top: -0.4rem;
@@ -152,7 +147,6 @@
 
     &:focus + .label,
     &:not([value=""]) + .label {
-      background-color: var(--white);
       transform: scale(75%);
       padding: 0 10px;
       top: -0.3rem;
@@ -167,6 +161,10 @@
 
   &.black {
     color: var(--black);
+  }
+
+  &.text {
+    color: var(--text);
   }
 
   &.whiteBg {
@@ -195,6 +193,21 @@
     &:not([value=""]) + .label {
       opacity: 1;
       background-color: var(--black);
+    }
+
+  }
+
+  &.textBg {
+    background-color: var(--bg);
+
+    & + .label {
+      color: var(--text);
+    }
+
+    &:focus + .label,
+    &:not([value=""]) + .label {
+      opacity: 1;
+      background-color: var(--bg);
     }
 
   }
