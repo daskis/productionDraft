@@ -1,1 +1,1 @@
-export * from "./mainApi.ts"
+export * from './mainApi';

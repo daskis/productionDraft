@@ -1,14 +1,21 @@
-import { ReactNode } from 'react';
-import { classNames } from '@shared/lib';
+import { classNames, useAppDispatch } from '@shared/lib';
 import { ToastContainer } from 'react-toastify';
-import { useGetMe } from '@entities/user';
-import { useTheme } from '@app/providers';
 import 'react-toastify/dist/ReactToastify.css';
+import { RouterProvider } from 'react-router-dom';
+import { router, useTheme } from '@app/providers';
+import { useEffect } from 'react';
+import { setToken } from '@features/auth';
 
 
-export const App = ({ children }: { children: ReactNode }) => {
+export const App = () => {
     const { theme } = useTheme();
-    useGetMe();
+    const token = localStorage.getItem('accessToken');
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+        if (token) {
+            dispatch(setToken(token));
+        }
+    }, [token, dispatch]);
     return (
         <div className={classNames('app', {}, [theme])}>
             <ToastContainer
@@ -24,7 +31,7 @@ export const App = ({ children }: { children: ReactNode }) => {
                 pauseOnHover
                 theme={theme}
             />
-            {children}
+            <RouterProvider router={router} />
         </div>
     );
 };

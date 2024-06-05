@@ -8,6 +8,10 @@ export interface RefreshResponse {
     refreshToken?: string;
 }
 
+export interface IAuthResponse {
+    accessToken: string;
+}
+
 export interface ILoginRequest extends IAuthRequest {
 }
 

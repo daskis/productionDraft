@@ -1,10 +1,10 @@
-import { mainApi } from '@shared/lib';
+import mainApi from '@shared/lib/store/api/mainApi.ts';
 
 export const userApi = mainApi.injectEndpoints({
     endpoints: (build) => ({
         getMe: build.query({
             query: () => ({
-                url: `/user/me`,
+                url: `/user`,
                 method: 'GET',
             }),
         }),
