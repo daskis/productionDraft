@@ -1,2 +1,2 @@
-export * from "./api"
-export * from "./store.ts"
+export * from './api';
+export * from './store.ts';
