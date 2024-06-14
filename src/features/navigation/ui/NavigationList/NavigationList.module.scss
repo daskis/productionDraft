@@ -1,5 +1,7 @@
 .list {
   display: flex;
+  width: 100%;
+
   flex-direction: column;
   gap: 10px;
 
@@ -9,7 +11,9 @@
 
   &Item {
     & a {
+      text-align: center;
       display: block;
+      width: 100%;
       padding: var(--padding-4) var(--padding-2);
       background-color: var(--bg);
       cursor: pointer;
