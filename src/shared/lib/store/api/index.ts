@@ -1,1 +1,2 @@
-export * from './mainApi';
+export { mainApi } from './mainApi';
+export { baseQueryWithReauth, baseQuery } from './baseQuery.ts';

@@ -3,11 +3,6 @@ export interface IAuthRequest {
     password: string
 }
 
-export interface RefreshResponse {
-    accessToken: string;
-    refreshToken?: string;
-}
-
 export interface IAuthResponse {
     accessToken: string;
 }

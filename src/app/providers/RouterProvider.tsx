@@ -1,24 +1,16 @@
 import { createBrowserRouter, redirect } from 'react-router-dom';
-import { LoginPage, MainPage, RegisterPage, RequireAuth } from '@pages/ui';
-import { AuthProvider } from '../AuthProvider/AuthProvider.tsx';
+import { LoginPage, MainPage, RegisterPage } from '@pages/ui';
+import { AuthProvider } from '@app/providers/AuthProvider.tsx';
+import { SidebarProvider } from '@widgets/lib/utils/SidebarProvider';
 
 export const router = createBrowserRouter([
     {
         path: '/',
+        element: <AuthProvider />,
         children: [
             {
                 index: true,
-                element: <MainPage />,
-            },
-            {
-                path: 'require',
-                element: <AuthProvider />,
-                children: [
-                    {
-                        index: true,
-                        element: <RequireAuth />,
-                    },
-                ],
+                element: <SidebarProvider><MainPage /></SidebarProvider>,
             },
         ],
     },

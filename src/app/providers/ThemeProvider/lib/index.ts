@@ -1,3 +1,3 @@
-export * from "./types"
-export * from "./useTheme.ts"
-export * from "./ThemeContent.ts"
+export * from './types';
+export { useTheme } from './useTheme.ts';
+export { ThemeContent } from './ThemeContent.ts';

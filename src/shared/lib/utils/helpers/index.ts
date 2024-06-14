@@ -1,1 +1,1 @@
-export * from "./classNames.ts"
+export { classNames } from './classNames.ts';

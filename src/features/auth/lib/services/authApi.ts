@@ -1,5 +1,5 @@
 import { IAuthResponse, ILoginRequest } from '@features/auth';
-import mainApi from '@shared/lib/store/api/mainApi.ts';
+import { mainApi } from '@store/api';
 
 export const authApi = mainApi.injectEndpoints({
     endpoints: (build) => ({

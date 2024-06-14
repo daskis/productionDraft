@@ -1,4 +1,4 @@
-import mainApi from '@shared/lib/store/api/mainApi.ts';
+import { mainApi } from '@store/api';
 
 export const userApi = mainApi.injectEndpoints({
     endpoints: (build) => ({

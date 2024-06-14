@@ -1,3 +1,3 @@
-export * from './useAppSelector.ts';
-export * from './useAppDispatch.ts';
-export * from './useDebounce.ts';
+export { useAppSelector } from './useAppSelector.ts';
+export { useAppDispatch } from './useAppDispatch.ts';
+export { useDebounce } from './useDebounce.ts';

@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 export const MainPage = () => {
     const [value, setValue] = useState<string>('');
-
     return (
         <div>
             <Text.Heading weight={WeightEnum.BOLD} className={'1224'} size={SizeEnum.H1}

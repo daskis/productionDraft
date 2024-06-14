@@ -1,0 +1,13 @@
+.wrapper {
+  background-color: var(--bg);
+  display: flex;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.body {
+  min-height: 100vh;
+  overflow-y: scroll;
+  padding: 20px;
+  flex-grow: 1;
+}

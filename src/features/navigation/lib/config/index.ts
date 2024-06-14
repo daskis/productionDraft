@@ -1,0 +1,1 @@
+export { NavigationConfig } from './navigationConfig.ts';

@@ -1,3 +1,3 @@
 export * from './ThemeProvider';
-export * from './RouterProvider';
-export * from './AuthProvider';
+export { router } from './RouterProvider.tsx';
+export { AuthProvider } from './AuthProvider.tsx';

@@ -1,29 +1,31 @@
-import {defineConfig} from 'vite'
-import react from '@vitejs/plugin-react'
-import svgx from "@svgx/vite-plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgx from '@svgx/vite-plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react(), svgx()],
     resolve: {
         alias: {
-            "@": "/src",
+            '@': '/src',
 
-            "@styles": "/src/app/styles",
+            '@styles': '/src/app/styles',
 
-            "@app": "/src/app",
+            '@app': '/src/app',
 
-            "@pages": "/src/pages",
+            '@pages': '/src/pages',
 
-            "@shared": "/src/shared",
+            '@shared': '/src/shared',
 
-            "@assets": "/src/shared/assets",
+            '@assets': '/src/shared/assets',
 
-            "@widgets": "/src/widgets",
+            '@widgets': '/src/widgets',
 
 
-            "@features": "/src/features",
+            '@features': '/src/features',
 
-            "@entities": "/src/entities",
-        }
-    }
-})
+            '@entities': '/src/entities',
+
+            '@store': '/src/shared/lib/store',
+        },
+    },
+});
